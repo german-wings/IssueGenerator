@@ -6,7 +6,6 @@
 }
 
 body{
-    overflow: hidden;
     margin: 0px;
 }
 
@@ -15,7 +14,21 @@ body{
     height: 100vh;
 }
 
+#issue_dashboard *{
+    color: black;
+    text-align: center;
+}
+
 #issue_dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F8E16C;
+}
+
+#issue_dashboard_banner_1{
+    width: 100%;
+    margin: 0px auto;
 }
 
 #issue_main_page{
@@ -71,7 +84,7 @@ body{
     border-bottom: 2px solid white;
 }
 
-#issue_main_page button{
+button{
     padding: 15px 25px;
     background-color: #00C49A;
     color: black;
@@ -86,6 +99,10 @@ body{
 
 #issue_main_page_submit_control_box h3{
     margin: auto 0px;
+}
+
+#issue_about_page *{
+    color: black;
 }
 
 
