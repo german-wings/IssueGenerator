@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    color: white;
+    font-family: 'Happy Monkey', cursive;
+}
+
+body{
+    overflow: hidden;
+    margin: 0px;
+}
+
+.theme{
+    width: 100%;
+    height: 100vh;
+}
+
+#issue_dashboard{
+}
+
+#issue_main_page{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 7px;
+    background-color: #156064;
+    margin: 0px auto;
+}
+
+#issue_main_page h2 {
+    text-align: right;
+}
+
+#issue_main_page textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+#issue_main_page * {
+    margin: 2px;
+}
+
+#issue_main_page input{
+    width: 70%;
+    display: block;
+    padding: 5px;
+    background-color: #156064;
+    border : none;
+    border-bottom: 2px solid white;
+}
+
+#issue_main_page label{
+    width: 70%;
+    display: block;
+    padding: 5px;
+    background-color: #156064;
+}
+
+#issue_main_page select{
+    width: 70%;
+    display: block;
+    padding: 5px;
+    background-color: #156064;
+    border : none;
+    border-bottom: 2px solid white;
+}
+
+#issue_main_page textarea{
+    background-color: #156064;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+#issue_main_page button{
+    padding: 15px 25px;
+    background-color: #00C49A;
+    color: black;
+    border: none;
+    border-radius: 30px;
+}
+
+#issue_main_page_submit_control_box{
+    display: flex;
+    justify-content: space-around;
+}
+
+#issue_main_page_submit_control_box h3{
+    margin: auto 0px;
+}
+
+
