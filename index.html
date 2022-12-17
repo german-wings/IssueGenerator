@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHAKTI ENTERPRISE - Inspection Patrol Log</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
-    <script src="./Scripts/main.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="libs/jquery-ui-1.13.2.custom/jquery-ui.min.css" defer>
+    <script src="libs/jquery-ui-1.13.2.custom/external/jquery/jquery.js" defer></script>
+    <script src="libs/jquery-ui-1.13.2.custom/jquery-ui.min.js" defer></script>
+    <script src="./Scripts/main.js" type="module" defer></script>
 </head>
 
 <body>
@@ -32,7 +37,10 @@
         <form action="">
 
             <label id="label_part_number" for="input_part_number">Part Number</label>
-            <input id="input_part_number" type="text" required />
+            <input id="input_part_number" list="partNumbers" type="text" required />
+
+            <datalist id="partNumbers">
+            </datalist>
 
             <label id="label_issue_stage" for="input_issue_stage">Issue Identified at Stage</label>
             <select id="input_issue_stage">
@@ -58,8 +66,7 @@
             <input id="input_critical_qty" type="number" min="0" value="0" required />
 
             <label id="label_non_critical_qty" for="input_non_critical_qty">Non Critical Issues Qty</label>
-            <input id="input_non_critical_qty" type="number" min="0" 
-            value = "0" required />
+            <input id="input_non_critical_qty" type="number" min="0" value="0" required />
 
             <label id="label_reason_for_critical_issue" for="input_reason_for_critical_issue">Reasons for Marking
                 Critical Issue</label>
@@ -79,10 +86,6 @@
 
     <div id="issue_about_page" class="theme">
         <h3 id="banner_1">About this Project</h3>
-        <ul>
-            <li>This Project is part of Shakti Enterprise's team to create better products through tracking Issues in realtime</li>
-            <li>@Author of the Project is bhavar@fpsecpl.com</li>
-        </ul>
     </div>
 
 </body>

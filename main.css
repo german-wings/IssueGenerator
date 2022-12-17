@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
     padding: 0px;
-    color: white;
+    color: black;
     font-family: 'Happy Monkey', cursive;
 }
 
@@ -51,6 +51,7 @@ body{
 
 #issue_main_page * {
     margin: 2px;
+    color: white;
 }
 
 #issue_main_page input{
@@ -60,6 +61,7 @@ body{
     background-color: #156064;
     border : none;
     border-bottom: 2px solid white;
+    color: white;
 }
 
 #issue_main_page label{

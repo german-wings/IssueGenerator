@@ -15,6 +15,34 @@ body.addEventListener("onload", updateDashboard())
 var share_to_cloud_button = document.getElementById("share_to_cloud")
 share_to_cloud_button.addEventListener("click", handleShareToCloud)
 
+var input_tag = document.getElementById("input_part_number")
+
+
+async function autoCompleteHandler(){
+
+    const secret = prompt("Enter App Secret ",null)
+
+    const partsListURL = "https://ap-south-1.aws.data.mongodb-api.com/app/inspectiondatalogger-akpda/endpoint/fetchParts?secret="+secret
+    const data = await axios.get(partsListURL)
+    const list = data.data.data
+    console.log(list.length)
+    let list_of_elems = ""
+    list.forEach(item=>{
+        let option_element = document.createElement("option")
+        option_element.setAttribute("value",item)
+        list_of_elems+=`<option value="${item}"/>`
+    })
+
+    $( "#input_part_number" ).autocomplete({
+        source: [...list],
+        minLength : 3,
+        delay : 500
+      });
+}
+
+
+
+
 
 function handleShareToCloud() {
     const mailHandler = "https://ap-south-1.aws.data.mongodb-api.com/app/inspectiondatalogger-akpda/endpoint/sendMail"
@@ -90,6 +118,7 @@ function buildEmailString(){
 
 
 function updateDashboard() {
+
     //get all the items from localStorage
     var localStorageKeys = Object.keys(localStorage)
     let total_number_of_issues = localStorageKeys.length
@@ -133,7 +162,7 @@ function updateDashboard() {
 
     issue_dashboard_display_box.innerHTML = `Total Issues Logged : ${total_number_of_issues} | Total Measured Qty : ${total_measured_qty} <br> Total Critical Issues : ${total_critical_issues} | Total Non Critical Issues : ${total_non_critical_issues}`
 
-
+    autoCompleteHandler()
 }
 
 function store_issue(event) {
