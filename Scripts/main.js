@@ -20,10 +20,12 @@ var input_tag = document.getElementById("input_part_number")
 
 async function autoCompleteHandler(){
 
-    const secret = prompt("Enter App Secret ",null)
+    let secret = prompt("Enter App Secret ",null)
 
     const partsListURL = "https://ap-south-1.aws.data.mongodb-api.com/app/inspectiondatalogger-akpda/endpoint/fetchParts?secret="+secret
+    
     const data = await axios.get(partsListURL)
+    console.log(data.status)
     const list = data.data.data
     console.log(list.length)
     let list_of_elems = ""
@@ -41,7 +43,7 @@ async function autoCompleteHandler(){
 }
 
 
-
+autoCompleteHandler()
 
 
 function handleShareToCloud() {
@@ -161,8 +163,6 @@ function updateDashboard() {
     })
 
     issue_dashboard_display_box.innerHTML = `Total Issues Logged : ${total_number_of_issues} | Total Measured Qty : ${total_measured_qty} <br> Total Critical Issues : ${total_critical_issues} | Total Non Critical Issues : ${total_non_critical_issues}`
-
-    autoCompleteHandler()
 }
 
 function store_issue(event) {
